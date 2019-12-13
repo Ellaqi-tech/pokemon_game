@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="">
+        <title>RUN POKEMON</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style/animation-style.css">
+        <script type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="scripts/animation-jquery.js" ></script>
+
+    </head>
+    <body>
+        <embed name="GoodEnough" src="Catch.mp3" loop="true" hidden="true" autostart="true">
+        <div class="bg">
+            <header>
+                <h1>Run <span id="p">P</span><span id="o">o</span><span id="k">k</span><span id="e">e</span><span id="m">m</span><span id="o">o</span><span id="n">n</span>!</h1>
+            
+<!--******************* hide after play **********************-->
+                <div id="description">
+                    <p>Press <span>Enter</span> key to start the game!</p>
+                    <p>Press <span>Space</span> key to help your Pokemon jump when a Elf ball coming!</p>
+                </div>
+            
+<!--******************* score *************************-->
+                <div id="score">
+                    0
+                </div>
+                
+                <div>
+                    <img id="moon" src="img/moon.png" alt="a moon with starts">
+                </div>
+<!--******************** reset ************************-->
+                <div id="reset">
+                    Play Again
+                </div>
+
+            </header>
+        
+<!--************************** game part ***********************-->
+            <div id="container">
+                <div id="pokemon">
+                    <img id="run" class="smallpokemon" src="img/static.png" alt="a static pokemon">
+                </div>
+
+                <img id="ball" src="img/ball1.png" alt="ball">
+            </div>
+        
+<!--************************** game part end ***********************-->
+        </div>    
+    </body>
+
+</html>

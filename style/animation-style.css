@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+html {
+    box-sizing: border-box;
+}
+body {
+    max-width: 1200px;
+    font-family: 'VT323', monospace;
+    margin: 0 auto;
+    padding: 0;
+    background: url(../img/newbg.png);
+    height: auto;
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+}
+.bodybg {
+        animation: bgnight 20s ease infinite alternate, 
+                   bgmove 10s linear infinite;
+}
+@keyframes bgmove {
+    0% {background-position: 2302px 0;}
+    100% {background-position: 100% 0;}
+}
+@keyframes bgnight {
+    0% {
+        background: url(../img/newbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+    100% {
+        background: url(../img/nightbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+}
+/******************************* title part ********************/
+h1 {
+    font-size: 6em;
+    text-align: center;
+    color: #f1c4ff;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+    text-shadow: 0 15px 10px #212734;
+}
+#p {
+    color: #55A3AB;
+}
+#o {
+    color: #A2D7D5;
+}
+#k {
+    color: #DF807E;
+}
+#e {
+    color: #F5E97E;
+}
+#m {
+    color: #CC6310;
+}
+#n {
+    color: #E64556;
+}
+#description p {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+    color: #552e73;
+    padding-top:0;
+}
+#description p span {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#score {
+    font-size: 4em;
+    position: absolute;
+    right: 2em;
+    top: 0.1em;
+    color: #f1eef9;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding-top: 1.1em;
+    /* background: url(img/ball1.png) top center no-repeat; */
+    background-size: cover;
+}
+
+#moon {
+    position: absolute;
+    width: 375px;
+    top: 0;
+    left: 0;
+    display: none;
+    animation: showmoon 26s infinite alternate;
+}
+@keyframes showmoon {
+    0% {
+          opacity: 0;
+          filter: alpha(opacity=50);
+    }
+    50% {
+          opacity: 1;
+          filter: alpha(opacity=50); 
+    }
+    100% {
+          opacity: 0;
+          filter: alpha(opacity=50);
+    }
+}
+
+#reset {
+    position: fixed;
+    top: 4em;
+    left:40%;
+    padding: 0 0.8em;
+    font-size: 3em;
+    border-radius: 50px;
+    background-color: antiquewhite;
+    line-height: 100px;
+    text-align: center;
+    box-shadow: 0 14px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+}
+/***************************** game part ***************************/
+#container {
+    position: relative;
+    width:  100%;
+    height: 400px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    top: 1em;
+}
+#pokemon {
+    position: absolute;
+    bottom: 2.3em;
+    left: 15em;
+}
+#run {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 156px;
+    animation: runmove 0.5s infinite;
+}
+@keyframes runmove {
+    0% {
+        content:url("../img/static.png");
+    }
+    50% {
+        content: url("../img/run.png");
+    }
+}
+.jump {
+    animation: jumpup 2s ease-out;
+}
+@keyframes jumpup {
+    0% {
+        top: 290px;
+    }
+    40% {
+        top:50px;
+    }
+    100% {
+        top:290px;
+    }
+}
+
+/***************************** ball *******************************/
+
+#ball {
+    display: block;
+    position: absolute;
+    width: 150px;
+    right: -120px;
+    top:150px;
+}
+.bigball {
+    animation: catch 3s alternate;
+}
+/*
+.smallpokemon {
+    animation: becatched 5s infinite;
+}
+*/
+@keyframes catch {
+    0% {
+        width: 150px;
+        top: 0;
+        right: 0;
+    }
+    50% {
+        width: 500px;
+        top: 0;
+        right: 600px;
+    }
+    70% {
+        width: 500px;
+        top: 0;
+        right: 700px;
+    }
+    100% {
+        width: 150px;
+        top: 0;
+        right: 700px;
+    }
+}
+/*
+@keyframes becatched {
+    0% {
+        width: 156px;
+        top: 0;
+    }
+*/
+/*
+    20% {
+        width: 150px;
+    } 
+    40% {
+        width: 40px;
+    }
+*/
+/*
+    60% {
+        width: 120px;
+    } 
+*/
+/*
+    80% {
+        width: 30px;
+    } 
+*/
+/*
+    100% {
+        width: 10px;
+        top: 0;
+    }
+}*/

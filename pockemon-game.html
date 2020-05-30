@@ -7,15 +7,19 @@
         <link rel="stylesheet" type="text/css" href="style/animation-style.css">
         <script type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="scripts/animation-jquery.js" ></script>
-
     </head>
     <body>
-<!--        <embed name="GoodEnough" src="Catch.mp3" loop="true" hidden="true" autostart="true">-->
-        <audio src="Catch.mp3">
-<p>If you are reading this, it is because your browser does not support the audio element.     </p>
-</audio>
+<!--        <embed name="GoodEnough" src="Catch.mp3" loop="true" hidden="false" autostart="true">-->
+        
+<!-- seems Chrome does not support autoplay audio
+        <audio id="audio" controls autoplay loop>
+            <source src="Catch.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+-->
         <div class="bg">
             <header>
+                <div id="copyright">Designed by &copy; Ella Qi 2020 <a href="https://github.com/Ellaqi-tech/pokemon_game">Github: Ellaqi-tech</a></div>
                 <h1>Run <span id="p">P</span><span id="o">o</span><span id="k">k</span><span id="e">e</span><span id="m">m</span><span id="o">o</span><span id="n">n</span>!</h1>
             
 <!--******************* hide after play **********************-->
@@ -29,14 +33,14 @@
                     0
                 </div>
                 
-                <div>
-                    <img id="moon" src="img/moon.png" alt="a moon with starts">
+                <div id="moondiv">
+                    <img id="moon" src="img/moon-cut.png" alt="a moon with starts">
                 </div>
 <!--******************** reset ************************-->
-                <div id="reset">
-                    Play Again
-                </div>
-
+                <button id="reset">
+                    Play Again <br/>
+                    <p>Press <span>Enter</span> key to start!</p>
+                </button>
             </header>
         
 <!--************************** game part ***********************-->
@@ -44,12 +48,12 @@
                 <div id="pokemon">
                     <img id="run" class="smallpokemon" src="img/static.png" alt="a static pokemon">
                 </div>
-
+                <img id="static" class="smallpokemon" src="img/static.png" alt="a static pokemon">
                 <img id="ball" src="img/ball1.png" alt="ball">
+                <div id="gotcha">Gotcha!</div>
             </div>
         
 <!--************************** game part end ***********************-->
         </div>    
     </body>
-
 </html>

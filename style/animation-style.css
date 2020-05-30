@@ -4,6 +4,7 @@ html {
 }
 body {
     max-width: 1200px;
+    height: 100%;
     font-family: 'VT323', monospace;
     margin: 0 auto;
     padding: 0;
@@ -12,12 +13,30 @@ body {
     background-size: cover;
     background-position: 0 0;
     background-repeat: repeat-x;
+    overflow: hidden;
+}
+a {
+    text-decoration: inherit;
 }
 .bodybg {
-        animation: bgnight 20s ease infinite alternate, 
-                   bgmove 10s linear infinite;
+    animation: bgnight 20s linear infinite alternate,
+               bgmove 10s linear infinite;
+    -webkit-animation: bgnight 20s linear infinite alternate,
+               bgmove 10s linear infinite;
+    -moz-animation: bgnight 20s linear infinite alternate,
+               bgmove 10s linear infinite;
+    -ms-animation: bgnight 20s linear infinite alternate,
+               bgmove 10s linear infinite;
 }
 @keyframes bgmove {
+    0% {background-position: 2302px 0;}
+    100% {background-position: 100% 0;}
+}
+@-webkit-keyframes bgmove {
+    0% {background-position: 2302px 0;}
+    100% {background-position: 100% 0;}
+}
+@-moz-keyframes bgmove {
     0% {background-position: 2302px 0;}
     100% {background-position: 100% 0;}
 }
@@ -33,14 +52,44 @@ body {
         background-repeat: repeat-x;
     }
 }
+@-moz-keyframes bgnight {
+    0% {
+        background: url(../img/newbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+    100% {
+        background: url(../img/nightbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+}
+@-webkit-keyframes bgnight {
+    0% {
+        background: url(../img/newbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+    100% {
+        background: url(../img/nightbg.png);
+        background-size: cover;
+        background-repeat: repeat-x;
+    }
+}
 /******************************* title part ********************/
+#audio {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 h1 {
-    font-size: 6em;
+    font-size: 7em;
     text-align: center;
     color: #f1c4ff;
     margin-bottom: 0;
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     text-shadow: 0 15px 10px #212734;
+    z-index: 2;
 }
 #p {
     color: #55A3AB;
@@ -60,8 +109,11 @@ h1 {
 #n {
     color: #E64556;
 }
+#description {
+    margin-top: 5em;
+}
 #description p {
-    font-size: 1.5em;
+    font-size: 1.9em;
     text-align: center;
     margin-top: 1em;
     color: #552e73;
@@ -75,51 +127,128 @@ h1 {
     font-size: 4em;
     position: absolute;
     right: 2em;
-    top: 0.1em;
+    top: 2em;
     color: #f1eef9;
     width: 200px;
     height: 200px;
     text-align: center;
     padding-top: 1.1em;
-    /* background: url(img/ball1.png) top center no-repeat; */
     background-size: cover;
 }
-
 #moon {
     position: absolute;
     width: 375px;
     top: 0;
     left: 0;
     display: none;
-    animation: showmoon 26s infinite alternate;
+    animation: showmoon 38s linear infinite;
+    -webkit-animation: showmoon 38s linear infinite;
+    -moz-animation: showmoon 38s linear infinite;
+    -ms-animation: showmoon 38s linear infinite;
+    z-index: -1;
 }
 @keyframes showmoon {
     0% {
           opacity: 0;
-          filter: alpha(opacity=50);
+          filter: alpha(opacity=0);
     }
-    50% {
+    20% {
+          opacity: 0.2;
+          filter: alpha(opacity=20); 
+    }
+    40% {
           opacity: 1;
-          filter: alpha(opacity=50); 
+          filter: alpha(opacity=100); 
+    }
+    55% {
+          opacity: 0.1;
+          filter: alpha(opacity=10); 
+    }
+    65% {
+          opacity: 0;
+          filter: alpha(opacity=0); 
     }
     100% {
           opacity: 0;
-          filter: alpha(opacity=50);
+          filter: alpha(opacity=0);
     }
 }
-
+@-webkit-keyframes showmoon {
+    0% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+    }
+    20% {
+          opacity: 0.2;
+          filter: alpha(opacity=20); 
+    }
+    40% {
+          opacity: 1;
+          filter: alpha(opacity=100); 
+    }
+    55% {
+          opacity: 0.1;
+          filter: alpha(opacity=10); 
+    }
+    65% {
+          opacity: 0;
+          filter: alpha(opacity=0); 
+    }
+    100% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+    }
+}
+@-moz-keyframes showmoon {
+    0% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+    }
+    20% {
+          opacity: 0.2;
+          filter: alpha(opacity=20); 
+    }
+    40% {
+          opacity: 1;
+          filter: alpha(opacity=100); 
+    }
+    55% {
+          opacity: 0.1;
+          filter: alpha(opacity=10); 
+    }
+    65% {
+          opacity: 0;
+          filter: alpha(opacity=0); 
+    }
+    100% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+    }
+}
 #reset {
-    position: fixed;
-    top: 4em;
-    left:40%;
-    padding: 0 0.8em;
+    margin: 8vw auto;
+    padding: 0.3em 1em;
     font-size: 3em;
-    border-radius: 50px;
-    background-color: antiquewhite;
-    line-height: 100px;
+    font-family: 'VT323', monospace;
+    border: none;
+    border-radius: 120px;
+    background-color: #f1eef9;
+    line-height: 50px;
     text-align: center;
     box-shadow: 0 14px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: none;
+}
+#reset p {
+    font-size: 0.6em;
+    margin: 0;
+    padding: 0;
+}
+#reset p span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#reset:hover {
+    background-color: #F5E97E;
 }
 /***************************** game part ***************************/
 #container {
@@ -129,7 +258,7 @@ h1 {
     margin: 0 auto;
     padding: 0;
     overflow: hidden;
-    top: 1em;
+    top: 0;
 }
 #pokemon {
     position: absolute;
@@ -137,11 +266,18 @@ h1 {
     left: 15em;
 }
 #run {
-    display: block;
+    display: none;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 156px;
     animation: runmove 0.5s infinite;
+    -webkit-animation: runmove 0.5s infinite;
+    -moz-animation: runmove 0.5s infinite;
+    -ms-animation: runmove 0.5s infinite;
+/*
+    still does not work in Firefox:
+        https://css-tricks.com/forums/topic/css-animation-not-working-in-firefox/
+*/
 }
 @keyframes runmove {
     0% {
@@ -151,8 +287,55 @@ h1 {
         content: url("../img/run.png");
     }
 }
+@-moz-keyframes runmove {
+    0% {
+        content:url("../img/static.png");
+    }
+    50% {
+        content: url("../img/run.png");
+    }
+}
+@-webkit-keyframes runmove {
+    0% {
+        content:url("../img/static.png");
+    }
+    50% {
+        content: url("../img/run.png");
+    }
+}
+#static {
+    width: 180px;
+    padding-left: 200px;
+    padding-top: 66px;
+}
+
 .jump {
-    animation: jumpup 2s ease-out;
+    animation: jumpup 1.5s ease-out;
+    -webkit-animation: jumpup 1.5s ease-out;
+    -moz-animation: jumpup 1.5s ease-out;
+    -ms-animation: jumpup 1.5s ease-out;
+}
+@-moz-keyframes jumpup {
+    0% {
+        top: 290px;
+    }
+    50% {
+        top:50px;
+    }
+    100% {
+        top:290px;
+    }
+}
+@-webkit-keyframes jumpup {
+    0% {
+        top: 290px;
+    }
+    50% {
+        top:50px;
+    }
+    100% {
+        top:290px;
+    }
 }
 @keyframes jumpup {
     0% {
@@ -165,9 +348,7 @@ h1 {
         top:290px;
     }
 }
-
 /***************************** ball *******************************/
-
 #ball {
     display: block;
     position: absolute;
@@ -177,12 +358,56 @@ h1 {
 }
 .bigball {
     animation: catch 3s alternate;
+    -webkit-animation: catch 3s alternate;
+    -moz-animation: catch 3s alternate;
+    -ms-animation: catch 3s alternate;
+    margin: 0;
+    padding: 0;
 }
-/*
-.smallpokemon {
-    animation: becatched 5s infinite;
+@-moz-keyframes catch {
+    0% {
+        width: 150px;
+        top: 0;
+        right: 0;
+    }
+    50% {
+        width: 500px;
+        top: 0;
+        right: 600px;
+    }
+    70% {
+        width: 500px;
+        top: 0;
+        right: 700px;
+    }
+    100% {
+        width: 200px;
+        top: 0;
+        right: 800px;
+    }
 }
-*/
+@-webkit-keyframes catch {
+    0% {
+        width: 150px;
+        top: 0;
+        right: 0;
+    }
+    50% {
+        width: 500px;
+        top: 0;
+        right: 600px;
+    }
+    70% {
+        width: 500px;
+        top: 0;
+        right: 700px;
+    }
+    100% {
+        width: 200px;
+        top: 0;
+        right: 800px;
+    }
+}
 @keyframes catch {
     0% {
         width: 150px;
@@ -200,39 +425,81 @@ h1 {
         right: 700px;
     }
     100% {
-        width: 150px;
+        width: 200px;
         top: 0;
-        right: 700px;
+        right: 800px;
     }
 }
-/*
-@keyframes becatched {
-    0% {
-        width: 156px;
-        top: 0;
+/************ ball animation after pockmon be caught ************/
+.oops {
+    position: absolute;
+    top: 10px !important;
+    animation: letmeout 0.4s infinite alternate;
+}
+@-moz-keyframes letmeout { 0% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
     }
-*/
-/*
-    20% {
-        width: 150px;
-    } 
-    40% {
-        width: 40px;
+    30% { 
+        -webkit-transform: rotate(-8deg); 
+        transform:rotate(-8deg); 
     }
-*/
-/*
-    60% {
-        width: 120px;
-    } 
-*/
-/*
-    80% {
-        width: 30px;
-    } 
-*/
-/*
-    100% {
-        width: 10px;
-        top: 0;
+    60% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
     }
-}*/
+    100% { 
+        -webkit-transform: rotate(0deg); 
+        transform:rotate(0deg); 
+    }  }
+@-webkit-keyframes letmeout { 0% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
+    }
+    30% { 
+        -webkit-transform: rotate(-8deg); 
+        transform:rotate(-8deg); 
+    }
+    60% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(0deg); 
+        transform:rotate(0deg); 
+    }  }
+@keyframes letmeout { 
+    0% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
+    }
+    30% { 
+        -webkit-transform: rotate(-8deg); 
+        transform:rotate(-8deg); 
+    }
+    60% { 
+        -webkit-transform: rotate(8deg); 
+        transform:rotate(8deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(0deg); 
+        transform:rotate(0deg); 
+    } 
+}
+#gotcha {
+    color: #DF807E;
+    font-size: 6em;
+    text-shadow: 0 10px 5px #212734;
+    position: absolute;
+    top: 10%;
+    left: 39%;
+    display: none;
+}
+/***************************** copyright *******************************/
+#copyright {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    opacity: 0.5;
+    z-index: 1;
+}

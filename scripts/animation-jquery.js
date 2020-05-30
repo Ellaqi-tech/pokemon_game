@@ -3,7 +3,7 @@ var enterPressed =0; //detect Enter key pressed times
 $(document).on('keypress',function(e) {
     var keyCode = (e.keyCode || e.which);
     if(keyCode === 13) {
-        if(enterPressed === 0) {
+        if(enterPressed === 0) { 
             enterPressed++;
         // author: Paolo Bergantino;
         // why use it: to detect press space bar to start the game

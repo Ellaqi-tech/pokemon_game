@@ -4,3 +4,7 @@
 ![index](index.png)
 ![night](night.png)
 ![playagain](playagain.png)
+
+  ##### Next step:
+        1. Make the lower half background content richer
+        2. Mobile version

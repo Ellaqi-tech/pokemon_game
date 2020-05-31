@@ -6,5 +6,4 @@
 ![playagain](playagain.png)
 
   ##### Next step:
-        1. Make the lower half background content richer
-        2. Mobile version
+        Mobile version optimization

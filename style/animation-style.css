@@ -8,7 +8,7 @@ body {
     font-family: 'VT323', monospace;
     margin: 0 auto;
     padding: 0;
-    background: url(../img/newbg.png);
+    background: url(../img/newbg-withstones.png);
     height: auto;
     background-size: cover;
     background-position: 0 0;
@@ -42,7 +42,7 @@ a {
 }
 @keyframes bgnight {
     0% {
-        background: url(../img/newbg.png);
+        background: url(../img/newbg-withstones.png);
         background-size: cover;
         background-repeat: repeat-x;
     }
@@ -281,26 +281,26 @@ h1 {
 }
 @keyframes runmove {
     0% {
-        content:url("../img/static.png");
+        content:url("../img/static-noshadow.png");
     }
     50% {
-        content: url("../img/run.png");
+        content: url("../img/run-noshadow.png");
     }
 }
 @-moz-keyframes runmove {
     0% {
-        content:url("../img/static.png");
+        content:url("../img/static-noshadow.png");
     }
     50% {
-        content: url("../img/run.png");
+        content: url("../img/run-noshadow.png");
     }
 }
 @-webkit-keyframes runmove {
     0% {
-        content:url("../img/static.png");
+        content:url("../img/static-noshadow.png");
     }
     50% {
-        content: url("../img/run.png");
+        content: url("../img/run-noshadow.png");
     }
 }
 #static {

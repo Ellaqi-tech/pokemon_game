@@ -6,4 +6,5 @@
 ![playagain](playagain.png)
 
   ##### Next step:
-        Mobile version optimization
+        1. optimize the game code, make it more reusable
+        2. Mobile version optimization
